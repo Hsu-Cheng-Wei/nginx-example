@@ -1,0 +1,12 @@
+web:
+    image: nginx
+    volumes:
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    - ./html80:/html80
+    - ./html8080:/html8080
+    ports:
+    - "80:80"
+    - "8080:8080"
+    environment:
+    - NGINX_HOST=foobar.com
+    - NGINX_PORT=80
